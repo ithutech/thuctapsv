@@ -41,6 +41,7 @@ function doShowUpdate() {
 }
 
 function sinhVienGet() {
+	$("#InfoSV").html('');
     var masv = $.trim($("input[name='txtMaSV']").val());
     
     var worksheets = [
