@@ -3,6 +3,7 @@
 <head>
     <title>Cổng Quản Lý Thực Tập Tốt Nghiệp - Học Kỳ Doanh Nghiệp</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
     <meta charset="utf-8">
     <style>
         :root {
@@ -129,6 +130,13 @@
             padding-right: 5px;
             padding-left: 5px;
         }
+		.btn-tuyendung{
+			float:right;
+			border:2px solid #ae3c33;
+			border-radius: 10px;
+			padding: 10px;
+			color:red;
+		}
 
     </style>
     <script src="./jquery-3.3.1.min.js"></script>
@@ -149,7 +157,9 @@
             <h1 style="text-align: center; color: red">HỌC KỲ DOANH NGHIỆP</h1>
 
             <form name="submit-GV">
-                <h3>DÀNH CHO SINH VIÊN</h3>
+                  <h3 style="display:inline">DÀNH CHO SINH VIÊN</h3>
+				
+					<a class="btn-tuyendung" href="https://www.hutech.edu.vn/khoacntt/doanh-nghiep/tuyen-dung" target="_blank" >TÌM CTY THỰC TẬP</a>
                 <div class="form-wrapper">
                     <label for="txtMaSV">MASV</label>
                     <input type="text" name="txtMaSV" placeholder="Mã số sinh viên" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Mã SV')" oninput="setCustomValidity('')">
