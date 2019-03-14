@@ -6,8 +6,7 @@ function stepGetSinhVien() {
     }
     doLoading()
         .then(doGetSinhVien)
-        .then(doComplete)
-        .then(doShowUpdate);
+        .then(doComplete);
 }
 function doLoading() {
     return new Promise(function (resolve, reject) {
@@ -31,18 +30,9 @@ function doComplete() {
     });
 }
 
-function doShowUpdate() {
-    return new Promise(function (resolve, reject) {
-        setTimeout(() => {
-            document.querySelector('.js-showupdate').classList.remove('is-hidden');
-        },1000);
-        resolve();
-    });
-}
-
 function sinhVienGet() {
 	$("#InfoSV").html('');
-	document.querySelector('.js-showupdate').classList.add('is-hidden');
+	
     var masv = $.trim($("input[name='txtMaSV']").val());
     
     var worksheets = [
@@ -77,11 +67,13 @@ function sinhVienGet() {
                 });
                 if (count == 0)
 				{
-                    $("#InfoSV").html('Không tìm thấy thông tin');
+                    $("#InfoSV").html('Không tìm thấy thông tin sinh viên');
+					document.querySelector('.js-showupdate').classList.add('is-hidden');
 				}
                 else {
                     $("#InfoSV").html(strText);
                     $("input[name=MASV]").val(masv);
+					document.querySelector('.js-showupdate').classList.remove('is-hidden');
                 }
             })
             .fail(function (err) {
