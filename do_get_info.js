@@ -42,6 +42,7 @@ function doShowUpdate() {
 
 function sinhVienGet() {
 	$("#InfoSV").html('');
+	document.querySelector('.js-showupdate').classList.add('is-hidden');
     var masv = $.trim($("input[name='txtMaSV']").val());
     
     var worksheets = [
@@ -75,7 +76,9 @@ function sinhVienGet() {
                     return;
                 });
                 if (count == 0)
+				{
                     $("#InfoSV").html('Không tìm thấy thông tin');
+				}
                 else {
                     $("#InfoSV").html(strText);
                     $("input[name=MASV]").val(masv);
