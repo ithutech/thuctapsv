@@ -33,7 +33,7 @@ function doComplete() {
 function sinhVienGet() {
 	$("#InfoSV").html('');
 	
-    var masv = $.trim($("input[name='txtMaSV']").val());
+    var masv = $.trim($("input[name='txtMaSV']").val()).replace(/ /g,'');
     
     var worksheets = [
         '', // defaults to first worksheet without id
@@ -47,7 +47,7 @@ function sinhVienGet() {
                 strText += "<tr> <th>SĐT Giảng Viên</th>  <th>Email GV</th>  <th>Tên GV</th>  <th>Tên SV</th>  <th>Lớp</th> <th>Mã SV</th>  <th>Ngành</th>  <th>Ngày sinh</th>  <th>Email SV</th>  <th>Số ĐT </th>  <th>Môn Học</th> ";
                 var count = 0;
                 rows.forEach(function (row) {
-                    var strMaSV = row['masv'];
+                    var strMaSV = row['masv'].replace(/ /g,'');
                     if (strMaSV == masv) {
                         count++;
                         strText += "<tr>";
