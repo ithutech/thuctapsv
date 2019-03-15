@@ -44,7 +44,9 @@ div#container {
   clear: both;
   padding: 10px 0px;
 }
-
+div#header {
+    padding-top: 10px;
+}
 input, textarea, select, button {
   font-family: "Muli-Regular";
   color: #333;
