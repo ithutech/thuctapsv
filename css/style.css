@@ -28,6 +28,7 @@ body {
 div#container {
     margin: 0 auto;
     max-width: 960px;
+	padding:10px;
 }
 
 .left{
@@ -43,9 +44,6 @@ div#container {
 #main-content{
   clear: both;
   padding: 10px 0px;
-}
-div#header {
-    padding-top: 10px;
 }
 input, textarea, select, button {
   font-family: "Muli-Regular";
