@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Cổng Quản Lý Thực Tập Tốt Nghiệp - Học Kỳ Doanh Nghiệp</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
     <meta charset="utf-8">
@@ -156,15 +157,15 @@
             <h1 style="text-align:center; color: red">CỔNG QUẢN LÝ THỰC TẬP TỐT NGHIỆP </h1>
             <h1 style="text-align: center; color: red">HỌC KỲ DOANH NGHIỆP</h1>
 
-            <form name="submit-GV">
+            <form name="submit-SV">
                   <h3 style="display:inline">DÀNH CHO SINH VIÊN</h3>
 				
 					<a class="btn-tuyendung" href="https://www.hutech.edu.vn/khoacntt/doanh-nghiep/tuyen-dung" target="_blank" >TÌM CTY THỰC TẬP</a>
                 <div class="form-wrapper">
                     <label for="txtMaSV">MASV</label>
-                    <input type="text" name="txtMaSV" placeholder="Mã số sinh viên" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Mã SV')" oninput="setCustomValidity('')">
+                    <input id="inMaSV" type="text" name="txtMaSV" placeholder="Mã số sinh viên" class="form-control" required="">
                 </div>
-                <button type="button" onclick="stepGetSinhVien(); return false;">TRA CỨU THÔNG TIN HƯỚNG DẪN</button>
+                <button id="btnDoSV" type="button" onclick="stepGetSinhVien(); return false;">TRA CỨU THÔNG TIN HƯỚNG DẪN</button>
             </form>
              <div class="loading js-loading is-hidden">
                 <div class="loading-spinner">
