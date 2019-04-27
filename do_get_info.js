@@ -149,7 +149,6 @@ function sinhVienGet() {
         }
 
         showLoadingIndicatorBaoCao();
-        debugger;
         fetch(scriptURLBaoCao, { method: 'POST', body: new FormData(formBaoCao) })
         .then(response => showSuccessMessage(response))
         .catch(error => showErrorMessage(error));
