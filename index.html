@@ -174,7 +174,13 @@
             </div>
             <div id="InfoSV" style="padding: 10px">
             </div>
+
             <div id="SVUpdate">
+            </div>
+
+            <div id="BaoCao" style="text-align: center;" class="js-showuAction is-hidden">
+                <button style="display: inline;" id="btnCapNhat" type="button" onclick="openUpdateThongTin(); return false;">CẬP NHẬT THÔNG TIN THỰC TẬP</button>
+                <button style="display: inline;"  id="btnBaoCao" type="button" onclick="openBaoCaoThucTap(); return false;">BÁO CÁO THỰC TẬP</button>
             </div>
 
             <form name="submit-to-google-sheet" class="js-showupdate is-hidden">
@@ -187,9 +193,62 @@
                     <label for="">Điện Thoại</label>
                     <input type="text" name="DIENTHOAI" placeholder="Hãy giữ liên lạc?" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập số điện thoại')" oninput="setCustomValidity('')">
                 </div>
+                <div class="form-wrapper">
+                    <label for="CONGTY">Công ty thực tập</label>
+                    <input type="text" name="CONGTY" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Công Ty')" oninput="setCustomValidity('')">
+                </div>
+                 <div class="form-wrapper">
+                    <label for="DIACHI">Địa chỉ công ty</label>
+                    <input type="text" name="DIACHI" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Địa chỉ công ty')" oninput="setCustomValidity('')">
+                </div>
+                 <div class="form-wrapper">
+                    <label for="NGAYBATDAU">Ngày bắt đầu thực tập tại Công ty</label>
+                    <input type="text" name="NGAYBATDAU" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Ngày bắt đầu thực tập tại Công ty')" oninput="setCustomValidity('')">
+                </div>
+                 <div class="form-wrapper">
+                    <label for="DIENTHOAIQUANLY">Điện thoại người quản lý bạn</label>
+                    <input type="text" name="DIENTHOAIQUANLY" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Điện thoại người quản lý bạn')" oninput="setCustomValidity('')">
+                </div>
+                 <div class="form-wrapper">
+                    <label for="CHUCVU">Chức vụ người quản lý bạn</label>
+                    <input type="text" name="CHUCVU" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Chức vụ người quản lý bạn')" oninput="setCustomValidity('')">
+                </div>
+                 <div class="form-wrapper">
+                    <label for="VITRICONGVIEC">Vị trí công việc thực tập</label>
+                    <input type="text" name="VITRICONGVIEC" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Vị trí công việc thực tập')" oninput="setCustomValidity('')">
+                </div>
                 <input type="text" hidden name="MASV">
-                <button type="submit">CẬP NHẬT THÔNG TIN LIÊN HỆ</button>
+                <button class="report_" type="submit">CẬP NHẬT THÔNG TIN</button>
             </form>
+
+            <div id="reportSV" class="js-showReport is-hidden">
+                <div id="time-report">
+                    <h3 style="color:red; font-weight:bold;">THÔNG TIN THỜI GIAN BÁO CÁO HÀNG TUẦN</h3>
+
+                    <table id="time-report-tuan" class="dtable" >
+                        <tr>
+                            <th>Tuần báo cáo</th>
+                            <th>Thời gian bắt đầu</th>
+                            <th>Thời gian kết thúc</th>
+                            <th>Báo cáo</th>
+                        </tr>
+                    </table>
+                </div>
+                <div id="getTime_">
+                    
+                </div>
+                <form id="form-report" name="submit-form-report" class="js-showNavReports is-hidden" novalidate>
+                    <h3 style="color:red; font-weight:bold;">SINH VIÊN BÁO CÁO THỰC TẬP CÔNG TY</h3>                   
+                    <div class="form-wrapper">
+                        <h3><label for="">Nội dung công việc</label></h3>
+                        <p>Lưu ý: Xong ý 'Chấm' xuống dòng <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ......</p>
+                        <textarea name="NOIDUNGCONGVIEC" class="noidung" id="InputTextArea" placeholder="Nhập nội dung báo cáo của bạn" onkeyup="resizeTextarea('InputTextArea')" onfocus="clearContents(this);" required></textarea>
+                    </div>
+                    <input type="text" hidden name="MASVREPORT">
+                    <input type="text" hidden name="MSSVTUAN">
+                    <button class="report_" type="submit">GỬI BÁO CÁO</button>
+                </form>
+            </div>
             <p class="js-success-message is-hidden" style="color:red">CẬP NHẬT THÀNH CÔNG</p>
             <p class="js-error-message is-hidden">AHAHA - LỖI RỒI</p>
         </div>
