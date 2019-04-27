@@ -59,8 +59,8 @@ function openBaoCaoThucTap() {
 }
 
 function sinhVienGet() {
-	$("#InfoSV").html('');
-	
+    $("#InfoSV").html('');
+    
     var masv = $.trim($("input[name='txtMaSV']").val()).replace(/ /g,'');
     
     var worksheets = [
@@ -106,7 +106,7 @@ function sinhVienGet() {
                     $("#InfoSV").html(strText);
                     $("input[name=MASV]").val(masv);
                     $("input[name=MASVREPORT]").val(masv);
-					//document.querySelector('.js-showupdate').classList.remove('is-hidden');
+                    //document.querySelector('.js-showupdate').classList.remove('is-hidden');
                     document.querySelector('.js-showuAction').classList.remove('is-hidden');
                     getTime();
                 }
@@ -149,6 +149,7 @@ function sinhVienGet() {
         }
 
         showLoadingIndicatorBaoCao();
+        debugger;
         fetch(scriptURLBaoCao, { method: 'POST', body: new FormData(formBaoCao) })
         .then(response => showSuccessMessage(response))
         .catch(error => showErrorMessage(error));
@@ -248,7 +249,7 @@ function sinhVienGet() {
             if(today >= temBD && today <= thoiGianKetThuc)
             {
                 strButton = "<button onclick='baocaotuan("+(i+1)+")' class='report_' >Báo cáo</button>";
-                
+                $("input[name=MSSVTUAN]").val($("input[name=MASVREPORT]").val()+"-"+(i+1));
             }
             else
                 strButton = "CHƯA TỚI THỜI GIAN BÁO CÁO HOẶC ĐÃ QUÁ HẠN BÁO CÁO";
@@ -272,7 +273,6 @@ function baocaotuan(tuan){
         document.querySelector('.js-showNavReports').classList.remove('is-hidden');
         //them thuoc tinh tuan cho form
         $("#form-report").append("<input type='hidden' name='TUANBAOCAO' value="+tuan+" >");
-        $("input[name=MSSVTUAN]").val($("input[name=MASVREPORT]").val()+"-"+tuan;
   }
 
   function resizeTextarea (id) {
