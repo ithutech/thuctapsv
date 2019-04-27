@@ -249,7 +249,7 @@ function sinhVienGet() {
             if(today >= temBD && today <= thoiGianKetThuc)
             {
                 strButton = "<button onclick='baocaotuan("+(i+1)+")' class='report_' >Báo cáo</button>";
-                $("input[name=MSSVTUAN]").val($("input[name=MASVREPORT]").val()+"-"+(i+1));
+                
             }
             else
                 strButton = "CHƯA TỚI THỜI GIAN BÁO CÁO HOẶC ĐÃ QUÁ HẠN BÁO CÁO";
@@ -273,6 +273,7 @@ function baocaotuan(tuan){
         document.querySelector('.js-showNavReports').classList.remove('is-hidden');
         //them thuoc tinh tuan cho form
         $("#form-report").append("<input type='hidden' name='TUANBAOCAO' value="+tuan+" >");
+        $("input[name=MSSVTUAN]").val($("input[name=MASVREPORT]").val()+"-"+tuan);
   }
 
   function resizeTextarea (id) {
