@@ -1,12 +1,7 @@
-// Get the input field
 var input = document.getElementById("inMaSV");
-// Execute a function when the user releases a key on the keyboard
 input.addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
   if (event.keyCode === 13) {
-    // Cancel the default action, if needed
     event.preventDefault();
-    // Trigger the button element with a click
     document.getElementById("btnDoSV").click();
 }
 });
@@ -54,17 +49,15 @@ function openBaoCaoThucTap() {
     // body...
     document.querySelector('.js-showReport').classList.remove('is-hidden');
     document.querySelector('.js-showupdate').classList.add('is-hidden');
-     document.querySelector('.js-success-message').classList.add('is-hidden');
+    document.querySelector('.js-success-message').classList.add('is-hidden');
     
 }
 
 function sinhVienGet() {
     $("#InfoSV").html('');
-    
     var masv = $.trim($("input[name='txtMaSV']").val()).replace(/ /g,'');
-    
     var worksheets = [
-        '', // defaults to first worksheet without id
+        '',
         'ouab0ad'];
 
         worksheets.forEach(function (worksheet) {
@@ -84,7 +77,6 @@ function sinhVienGet() {
                                 $("input[name=EMAIL]").val(row[name]);
                             if (name == 'sv-sdt')
                                 $("input[name=DIENTHOAI]").val(row[name]);
-                            //debugger;
 
                             $("input[name="+name.toUpperCase()+"]").val(row[name]);
 
@@ -106,7 +98,6 @@ function sinhVienGet() {
                     $("#InfoSV").html(strText);
                     $("input[name=MASV]").val(masv);
                     $("input[name=MASVREPORT]").val(masv);
-                    //document.querySelector('.js-showupdate').classList.remove('is-hidden');
                     document.querySelector('.js-showuAction').classList.remove('is-hidden');
                     getTime();
                 }
@@ -149,7 +140,6 @@ function sinhVienGet() {
         }
 
         showLoadingIndicatorBaoCao();
-        debugger;
         fetch(scriptURLBaoCao, { method: 'POST', body: new FormData(formBaoCao) })
         .then(response => showSuccessMessage(response))
         .catch(error => showErrorMessage(error));
@@ -185,35 +175,33 @@ function sinhVienGet() {
     function getTime() {
         $("#getTime_").html('');
         var worksheets = [
-        'Sheet3', // defaults to first worksheet without id
+        'Sheet3',
         '3'
         ];
 
         worksheets.forEach(function (worksheet) {
             $.googleSheetToJSON('1nO2nV65Vi3dZWGlaIOXLEc-_JWEZK16XFbjQVH_3Q0U', worksheet)
             .done(function (rows) {
-                var ngayBatDau, soTuan, um4y;
-                
-                //var strText = "<table border=1>";
+                var ngayBatDau, soTuan, um4y, IDTuan;
                 var count = 0;
                 rows.forEach(function (row) {
                     count++;
                     Object.getOwnPropertyNames(row).forEach(function (name) {
-
-                        
                         if(name == 'ngaybatdau')
                             ngayBatDau = row[name];
                         else if(name == 'sotuanthuchien')
                             soTuan = row[name];
                         else if(name == 'um4y')
                             um4y = row[name];
+                        else if(name == 'idtuan')
+                            IDTuan = row[name];
                     });
                     return;
                 });
                 if (count == 0) {
                     $("#getTime_").html('Lỗi');
                 } else {
-                    addcontent(ngayBatDau, soTuan, um4y);
+                    addcontent(ngayBatDau, soTuan, um4y, IDTuan);
                 }
             })
             .fail(function (err) {
@@ -223,14 +211,14 @@ function sinhVienGet() {
     }
 
 
-    function addcontent(ngayBatDau, soTuan, um4y){
+    function addcontent(ngayBatDau, soTuan, um4y, IDTuan){
         var thoiGianBatDau, thoiGianKetThuc;
         var thongTinTuan;
         var danhSachTuan = [];
-
         var parts = ngayBatDau.split('/');
         var ngayBatDau = new Date(parts[2], parts[1] - 1, parts[0]); 
         ngayBatDau = new Date(ngayBatDau.setDate(ngayBatDau.getDate()  - 7));
+        var isBaoCao = false;
         for (var i = 0; i < soTuan; i++) {
             thongTinTuan = [];
             thongTinTuan.push("Tuần " + (i + 1));
@@ -239,44 +227,42 @@ function sinhVienGet() {
             var temBD = new Date(thoiGianBatDau);
             thoiGianKetThuc = new Date(thoiGianBatDau.setDate(thoiGianBatDau.getDate() + 6));
             thongTinTuan.push("Đến "+thoiGianKetThuc.toLocaleDateString('vi-VN'));
-            //them nut bam vao mang thong tin tuan
-            //logic theo thoi gian hien tai
-            //lay thoi gian hien tai
-            //neu thoiGianBatDau <= thoi gian hien tai <= Thoi Gian Ket Thuc --> Enable, Else Disabled
-            var partsTD = um4y.split('/');
-            var today = new Date(partsTD[2], partsTD[1] - 1, partsTD[0]);          
-            var strButton;
-            if(today >= temBD && today <= thoiGianKetThuc)
+            strButton = "CHƯA TỚI THỜI GIAN BÁO CÁO HOẶC ĐÃ QUÁ HẠN BÁO CÁO";
+            if(!isBaoCao)
             {
-                strButton = "<button onclick='baocaotuan("+(i+1)+")' class='report_' >Báo cáo</button>";
-                
+                var partsTD = um4y.split('/');
+                var today = new Date(partsTD[2], partsTD[1] - 1, partsTD[0]);          
+                var strButton;
+                if(today >= temBD && today <= thoiGianKetThuc)
+                {
+                    strButton = "<button onclick='baocaotuan()' class='report_' >Báo cáo</button>";
+                    $("#form-report").append("<input type='hidden' name='TUANBAOCAO' value="+IDTuan+" >");
+                    $("input[name=MSSVTUAN]").val($("input[name=MASVREPORT]").val()+"-"+IDTuan);
+                    isBaoCao = true;
+                }
             }
-            else
-                strButton = "CHƯA TỚI THỜI GIAN BÁO CÁO HOẶC ĐÃ QUÁ HẠN BÁO CÁO";
             thongTinTuan.push(strButton);
             danhSachTuan.push(thongTinTuan);
-    }
-    table = document.getElementById("time-report-tuan");
-    table.innerHTML = "";
-    for(var i = 0; i < danhSachTuan.length; i++)
-    {
-      var newRow = table.insertRow(table.length);
-      for(var j = 0; j < danhSachTuan[i].length; j++)
-      {
-          var cell = newRow.insertCell(j);
-          cell.innerHTML = danhSachTuan[i][j];
+        }
+        table = document.getElementById("time-report-tuan");
+        table.innerHTML = "";
+        for(var i = 0; i < danhSachTuan.length; i++)
+        {
+          var newRow = table.insertRow(table.length);
+          for(var j = 0; j < danhSachTuan[i].length; j++)
+          {
+              var cell = newRow.insertCell(j);
+              cell.innerHTML = danhSachTuan[i][j];
+          }
       }
   }
+
+  function baocaotuan(){
+    document.querySelector('.js-showNavReports').classList.remove('is-hidden');
+    document.querySelector('.js-success-message').classList.add('is-hidden');    
 }
 
-function baocaotuan(tuan){
-        document.querySelector('.js-showNavReports').classList.remove('is-hidden');
-        //them thuoc tinh tuan cho form
-        $("#form-report").append("<input type='hidden' name='TUANBAOCAO' value="+tuan+" >");
-        $("input[name=MSSVTUAN]").val($("input[name=MASVREPORT]").val()+"-"+tuan);
-  }
-
-  function resizeTextarea (id) {
+function resizeTextarea (id) {
   var a = document.getElementById(id);
   a.style.height = '110px';
   a.style.height = a.scrollHeight+'px';
@@ -285,9 +271,9 @@ function baocaotuan(tuan){
 function init() {
   var a = document.getElementsByTagName('textarea');
   for(var i=0,inb=a.length;i<inb;i++) {
-     if(a[i].getAttribute('data-resizable')=='true')
+   if(a[i].getAttribute('data-resizable')=='true')
       resizeTextarea(a[i].id);
-  }
+}
 }
 
 addEventListener('DOMContentLoaded', init);
