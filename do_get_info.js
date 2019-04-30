@@ -103,7 +103,10 @@ function sinhVienGet() {
                 }
             })
             .fail(function (err) {
-                console.log('error!', err);
+                bootbox.alert({
+                    message: "LỖI DO MÁY CHỦ GOOGLE SHEET KHÔNG TRUY CẬP ĐƯỢC\n VUI LÒNG THỬ LẠI SAU ÍT PHÚT",
+                    size: 'small'
+                });
             });
         });
     }
@@ -205,7 +208,10 @@ function sinhVienGet() {
                 }
             })
             .fail(function (err) {
-                console.log('error!', err);
+                bootbox.alert({
+                    message: "LỖI DO MÁY CHỦ GOOGLE SHEET KHÔNG TRUY CẬP ĐƯỢC\n VUI LÒNG THỬ LẠI SAU ÍT PHÚT",
+                    size: 'small'
+                });
             });
         });
     }
