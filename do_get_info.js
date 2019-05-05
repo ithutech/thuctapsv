@@ -5,7 +5,6 @@ input.addEventListener("keyup", function(event) {
     document.getElementById("btnDoSV").click();
 }
 });
-
 function stepGetSinhVien() {
     var masv = $.trim($("input[name='txtMaSV']").val());
     if(masv == ''){
