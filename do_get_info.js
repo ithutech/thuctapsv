@@ -1,1 +1,300 @@
-var _0x14be=['toUpperCase','sotc','mand','mamh','nhom','congty','diachi','ngaybatdau','chucvu','match','concat','join','\x20/\x20','<td>','</td>','Không\x20tìm\x20thấy\x20thông\x20tin\x20sinh\x20viên','input[name=MASV]','.js-showuAction','submit-to-google-sheet','forms','.js-loading','.js-error-message','submit','preventDefault','BẠN\x20CẦN\x20NHẬP\x20MÃ\x20SV\x20TRA\x20CỨU\x20THÔNG\x20TIN\x20TRƯỚC\x20KHI\x20THỰC\x20HIỆN\x20THAO\x20TÁC\x20NÀY','POST','catch','input[name=MASVREPORT]','getElementById','InputTextArea','value','length','NỘI\x20DUNG\x20CẦN\x20NHẬP\x20TỐI\x20THIÊU\x2020\x20KÍ\x20TỰ','log','Success!','error','Error!','Sheet3','1nO2nV65Vi3dZWGlaIOXLEc-_JWEZK16XFbjQVH_3Q0U','done','um4y','idtuan','Lỗi','split','setDate','getDate','push','Từ\x20','toLocaleDateString','vi-VN','Đến\x20','CHƯA\x20TỚI\x20THỜI\x20GIAN\x20BÁO\x20CÁO\x20HOẶC\x20ĐÃ\x20QUÁ\x20HẠN\x20BÁO\x20CÁO','<button\x20onclick=\x27baocaotuan()\x27\x20class=\x27report_\x27\x20>Báo\x20cáo</button>','#form-report','append','<input\x20type=\x27hidden\x27\x20name=\x27TUANBAOCAO\x27\x20value=','input[name=MSSVTUAN]','time-report-tuan','innerHTML','insertRow','.js-showNavReports','style','height','110px','scrollHeight','textarea','getAttribute','data-resizable','true','inMaSV','addEventListener','keyup','keyCode','btnDoSV','click','input[name=\x27txtMaSV\x27]','val','VUI\x20LÒNG\x20NHẬP\x20MÃ\x20SINH\x20VIÊN','then','querySelector','classList','is-hidden','.js-showupdate','remove','.js-showReport','add','.js-success-message','#InfoSV','html','trim','replace','ouab0ad','forEach','googleSheetToJSON','<table\x20class=\x27dtable\x27>','<tr>\x20<th>SĐT\x20Giảng\x20Viên</th>\x20\x20<th>Email\x20GV</th>\x20\x20<th>Tên\x20GV</th>\x20\x20<th>Tên\x20SV</th>\x20\x20<th>Lớp</th>\x20<th>Mã\x20SV</th>\x20\x20<th>Ngành</th>\x20\x20<th>Ngày\x20sinh</th>\x20\x20<th>Email\x20SV</th>\x20\x20<th>Số\x20ĐT\x20</th>\x20\x20<th>Môn\x20Học</th>\x20','masv','<tr>','getOwnPropertyNames','input[name=EMAIL]','sv-sdt','input[name=DIENTHOAI]','input[name='];(function(_0x8ad5fc,_0x138a24){var _0x311133=function(_0x5920b8){while(--_0x5920b8){_0x8ad5fc['push'](_0x8ad5fc['shift']());}};_0x311133(++_0x138a24);}(_0x14be,0x1e1));var _0x5b15=function(_0x3449e3,_0x47a22f){_0x3449e3=_0x3449e3-0x0;var _0x9e7ad6=_0x14be[_0x3449e3];return _0x9e7ad6;};var input=document['getElementById'](_0x5b15('0x0'));input[_0x5b15('0x1')](_0x5b15('0x2'),function(_0x3361a2){if(_0x3361a2[_0x5b15('0x3')]===0xd){_0x3361a2['preventDefault']();document['getElementById'](_0x5b15('0x4'))[_0x5b15('0x5')]();}});function stepGetSinhVien(){var _0x24d6aa=$['trim']($(_0x5b15('0x6'))[_0x5b15('0x7')]());if(_0x24d6aa==''){alert(_0x5b15('0x8'));return![];}doLoading()[_0x5b15('0x9')](doGetSinhVien)[_0x5b15('0x9')](doComplete);}function doLoading(){return new Promise(function(_0x28d94a,_0x4df150){document[_0x5b15('0xa')]('.js-loading')[_0x5b15('0xb')]['remove']('is-hidden');_0x28d94a();});}function doGetSinhVien(){return new Promise(function(_0x58765c,_0x573fa9){sinhVienGet();_0x58765c();});}function doComplete(){return new Promise(function(_0x121828,_0x173b9c){setTimeout(()=>{document[_0x5b15('0xa')]('.js-loading')[_0x5b15('0xb')]['add'](_0x5b15('0xc'));},0x3e8);_0x121828();});}function openUpdateThongTin(){document[_0x5b15('0xa')](_0x5b15('0xd'))['classList'][_0x5b15('0xe')](_0x5b15('0xc'));document[_0x5b15('0xa')](_0x5b15('0xf'))[_0x5b15('0xb')][_0x5b15('0x10')](_0x5b15('0xc'));document[_0x5b15('0xa')](_0x5b15('0x11'))[_0x5b15('0xb')][_0x5b15('0x10')]('is-hidden');}function openBaoCaoThucTap(){document[_0x5b15('0xa')](_0x5b15('0xf'))[_0x5b15('0xb')][_0x5b15('0xe')]('is-hidden');document[_0x5b15('0xa')](_0x5b15('0xd'))[_0x5b15('0xb')]['add'](_0x5b15('0xc'));document[_0x5b15('0xa')](_0x5b15('0x11'))[_0x5b15('0xb')][_0x5b15('0x10')](_0x5b15('0xc'));}function sinhVienGet(){$(_0x5b15('0x12'))[_0x5b15('0x13')]('');var _0x1ddea2=$[_0x5b15('0x14')]($(_0x5b15('0x6'))[_0x5b15('0x7')]())[_0x5b15('0x15')](/ /g,'');var _0x3235a8=['',_0x5b15('0x16')];_0x3235a8[_0x5b15('0x17')](function(_0x3b0259){$[_0x5b15('0x18')]('1nO2nV65Vi3dZWGlaIOXLEc-_JWEZK16XFbjQVH_3Q0U',_0x3b0259)['done'](function(_0x264b37){var _0x9d2932='<table\x20border=1>';var _0x9d2932=_0x5b15('0x19');_0x9d2932+=_0x5b15('0x1a');var _0x4a9551=0x0;_0x264b37[_0x5b15('0x17')](function(_0x4be8f9){var _0x26dc61=_0x4be8f9[_0x5b15('0x1b')];if(_0x26dc61==_0x1ddea2){_0x4a9551++;_0x9d2932+=_0x5b15('0x1c');Object[_0x5b15('0x1d')](_0x4be8f9)[_0x5b15('0x17')](function(_0x415b2b){if(_0x415b2b=='sv-email')$(_0x5b15('0x1e'))[_0x5b15('0x7')](_0x4be8f9[_0x415b2b]);if(_0x415b2b==_0x5b15('0x1f'))$(_0x5b15('0x20'))[_0x5b15('0x7')](_0x4be8f9[_0x415b2b]);$(_0x5b15('0x21')+_0x415b2b[_0x5b15('0x22')]()+']')[_0x5b15('0x7')](_0x4be8f9[_0x415b2b]);if(_0x415b2b==_0x5b15('0x23')||_0x415b2b=='tt'||_0x415b2b==_0x5b15('0x24')||_0x415b2b==_0x5b15('0x25')||_0x415b2b==_0x5b15('0x26')||_0x415b2b===_0x5b15('0x27')||_0x415b2b===_0x5b15('0x28')||_0x415b2b===_0x5b15('0x29')||_0x415b2b==='dienthoaiquanly'||_0x415b2b===_0x5b15('0x2a')||_0x415b2b==='vitricongviec'||_0x415b2b[_0x5b15('0x2b')](/tuan.*/))return;var _0x525153=[][_0x5b15('0x2c')](_0x4be8f9[_0x415b2b])[_0x5b15('0x2d')](_0x5b15('0x2e'));_0x9d2932+=_0x5b15('0x2f')+_0x525153+_0x5b15('0x30');});_0x9d2932+='</tr>';}return;});if(_0x4a9551==0x0){$(_0x5b15('0x12'))[_0x5b15('0x13')](_0x5b15('0x31'));document[_0x5b15('0xa')](_0x5b15('0xd'))[_0x5b15('0xb')][_0x5b15('0x10')](_0x5b15('0xc'));}else{$('#InfoSV')[_0x5b15('0x13')](_0x9d2932);$(_0x5b15('0x32'))[_0x5b15('0x7')](_0x1ddea2);$('input[name=MASVREPORT]')[_0x5b15('0x7')](_0x1ddea2);document[_0x5b15('0xa')](_0x5b15('0x33'))[_0x5b15('0xb')][_0x5b15('0xe')](_0x5b15('0xc'));getTime();}})['fail'](function(_0x234fa8){});});}const scriptURLCapNhatThongTin='https://script.google.com/macros/s/AKfycby_UEQn0LNrCEMAp1z1EoWGqCvfJvn8i9qVX9s2vsgdlZY_Me4/exec';const formCapNhatThongTin=document['forms'][_0x5b15('0x34')];const scriptURLBaoCao='https://script.google.com/macros/s/AKfycbzgL12d13EvS7Hz-zjgu4BSmQ6ALMKJb0dej-uwpqf6EA50GAE/exec';const formBaoCao=document[_0x5b15('0x35')]['submit-form-report'];const loading=document[_0x5b15('0xa')](_0x5b15('0x36'));const successMessage=document[_0x5b15('0xa')](_0x5b15('0x11'));const errorMessage=document[_0x5b15('0xa')](_0x5b15('0x37'));formCapNhatThongTin[_0x5b15('0x1')](_0x5b15('0x38'),_0xd7290f=>{_0xd7290f[_0x5b15('0x39')]();if($('input[name=MASV]')['val']()==''){alert(_0x5b15('0x3a'));return![];}showLoadingIndicatorFormCapNhatThongTin();fetch(scriptURLCapNhatThongTin,{'method':_0x5b15('0x3b'),'body':new FormData(formCapNhatThongTin)})[_0x5b15('0x9')](_0x3bc8f1=>showSuccessMessage(_0x3bc8f1))[_0x5b15('0x3c')](_0x4cd294=>showErrorMessage(_0x4cd294));});formBaoCao[_0x5b15('0x1')](_0x5b15('0x38'),_0x322f6c=>{_0x322f6c[_0x5b15('0x39')]();if($(_0x5b15('0x3d'))[_0x5b15('0x7')]()==''){alert(_0x5b15('0x3a'));return![];}var _0xcdb613=document[_0x5b15('0x3e')](_0x5b15('0x3f'))[_0x5b15('0x40')];if(_0xcdb613[_0x5b15('0x41')]<0x14){alert(_0x5b15('0x42'));return![];}showLoadingIndicatorBaoCao();fetch(scriptURLBaoCao,{'method':_0x5b15('0x3b'),'body':new FormData(formBaoCao)})[_0x5b15('0x9')](_0x3b7705=>showSuccessMessage(_0x3b7705))['catch'](_0x941c0d=>showErrorMessage(_0x941c0d));});function showLoadingIndicatorFormCapNhatThongTin(){formCapNhatThongTin[_0x5b15('0xb')][_0x5b15('0x10')](_0x5b15('0xc'));loading[_0x5b15('0xb')]['remove'](_0x5b15('0xc'));}function showLoadingIndicatorBaoCao(){formBaoCao['classList'][_0x5b15('0x10')](_0x5b15('0xc'));loading[_0x5b15('0xb')][_0x5b15('0xe')]('is-hidden');}function showSuccessMessage(_0x5218a7){console[_0x5b15('0x43')](_0x5b15('0x44'),_0x5218a7);setTimeout(()=>{successMessage['classList'][_0x5b15('0xe')](_0x5b15('0xc'));loading[_0x5b15('0xb')][_0x5b15('0x10')](_0x5b15('0xc'));},0x3e8);}function showErrorMessage(_0x294966){console[_0x5b15('0x45')](_0x5b15('0x46'),_0x294966['message']);setTimeout(()=>{errorMessage[_0x5b15('0xb')][_0x5b15('0xe')](_0x5b15('0xc'));loading['classList'][_0x5b15('0x10')](_0x5b15('0xc'));},0x3e8);}function getTime(){$('#getTime_')[_0x5b15('0x13')]('');var _0x5babaf=[_0x5b15('0x47'),'3'];_0x5babaf[_0x5b15('0x17')](function(_0x10cd1e){$[_0x5b15('0x18')](_0x5b15('0x48'),_0x10cd1e)[_0x5b15('0x49')](function(_0x228e47){var _0x160916,_0x21cddc,_0x2fa3ac,_0x22ca78;var _0x112e4f=0x0;_0x228e47[_0x5b15('0x17')](function(_0x50614b){_0x112e4f++;Object[_0x5b15('0x1d')](_0x50614b)[_0x5b15('0x17')](function(_0x170eaa){if(_0x170eaa==_0x5b15('0x29'))_0x160916=_0x50614b[_0x170eaa];else if(_0x170eaa=='sotuanthuchien')_0x21cddc=_0x50614b[_0x170eaa];else if(_0x170eaa==_0x5b15('0x4a'))_0x2fa3ac=_0x50614b[_0x170eaa];else if(_0x170eaa==_0x5b15('0x4b'))_0x22ca78=_0x50614b[_0x170eaa];});return;});if(_0x112e4f==0x0){$('#getTime_')[_0x5b15('0x13')](_0x5b15('0x4c'));}else{addcontent(_0x160916,_0x21cddc,_0x2fa3ac,_0x22ca78);}})['fail'](function(_0x43e1c1){});});}function addcontent(_0x1a1e6d,_0x2fcc86,_0x26cdf3,_0x241d53){var _0x89986b,_0x431051;var _0x311eda;var _0x3890ec=[];var _0x19c42f=_0x1a1e6d[_0x5b15('0x4d')]('/');var _0x1a1e6d=new Date(_0x19c42f[0x2],_0x19c42f[0x1]-0x1,_0x19c42f[0x0]);_0x1a1e6d=new Date(_0x1a1e6d[_0x5b15('0x4e')](_0x1a1e6d[_0x5b15('0x4f')]()-0x7));var _0x17c195=![];for(var _0x4d3eb4=0x0;_0x4d3eb4<_0x2fcc86;_0x4d3eb4++){_0x311eda=[];_0x311eda[_0x5b15('0x50')]('Tuần\x20'+(_0x4d3eb4+0x1));_0x89986b=new Date(_0x1a1e6d['setDate'](_0x1a1e6d['getDate']()+0x7));_0x311eda[_0x5b15('0x50')](_0x5b15('0x51')+_0x89986b[_0x5b15('0x52')](_0x5b15('0x53')));var _0x5575f3=new Date(_0x89986b);_0x431051=new Date(_0x89986b[_0x5b15('0x4e')](_0x89986b['getDate']()+0x6));_0x311eda[_0x5b15('0x50')](_0x5b15('0x54')+_0x431051[_0x5b15('0x52')](_0x5b15('0x53')));_0x234456=_0x5b15('0x55');if(!_0x17c195){var _0x1d6262=_0x26cdf3[_0x5b15('0x4d')]('/');var _0x37e95d=new Date(_0x1d6262[0x2],_0x1d6262[0x1]-0x1,_0x1d6262[0x0]);var _0x234456;if(_0x37e95d>=_0x5575f3&&_0x37e95d<=_0x431051){_0x234456=_0x5b15('0x56');$(_0x5b15('0x57'))[_0x5b15('0x58')](_0x5b15('0x59')+_0x241d53+'\x20>');$(_0x5b15('0x5a'))[_0x5b15('0x7')]($(_0x5b15('0x3d'))[_0x5b15('0x7')]()+'-'+_0x241d53);_0x17c195=!![];}}_0x311eda[_0x5b15('0x50')](_0x234456);_0x3890ec[_0x5b15('0x50')](_0x311eda);}table=document[_0x5b15('0x3e')](_0x5b15('0x5b'));table[_0x5b15('0x5c')]='';for(var _0x4d3eb4=0x0;_0x4d3eb4<_0x3890ec[_0x5b15('0x41')];_0x4d3eb4++){var _0x125e8f=table[_0x5b15('0x5d')](table[_0x5b15('0x41')]);for(var _0x5ca624=0x0;_0x5ca624<_0x3890ec[_0x4d3eb4][_0x5b15('0x41')];_0x5ca624++){var _0x1c3364=_0x125e8f['insertCell'](_0x5ca624);_0x1c3364[_0x5b15('0x5c')]=_0x3890ec[_0x4d3eb4][_0x5ca624];}}}function baocaotuan(){document[_0x5b15('0xa')](_0x5b15('0x5e'))[_0x5b15('0xb')][_0x5b15('0xe')](_0x5b15('0xc'));document[_0x5b15('0xa')]('.js-success-message')[_0x5b15('0xb')][_0x5b15('0x10')](_0x5b15('0xc'));}function resizeTextarea(_0x342f55){var _0x12a78a=document[_0x5b15('0x3e')](_0x342f55);_0x12a78a[_0x5b15('0x5f')][_0x5b15('0x60')]=_0x5b15('0x61');_0x12a78a[_0x5b15('0x5f')][_0x5b15('0x60')]=_0x12a78a[_0x5b15('0x62')]+'px';}function init(){var _0x29d241=document['getElementsByTagName'](_0x5b15('0x63'));for(var _0x78d280=0x0,_0x5133b4=_0x29d241[_0x5b15('0x41')];_0x78d280<_0x5133b4;_0x78d280++){if(_0x29d241[_0x78d280][_0x5b15('0x64')](_0x5b15('0x65'))==_0x5b15('0x66'))resizeTextarea(_0x29d241[_0x78d280]['id']);}}addEventListener('DOMContentLoaded',init);function clearContents(_0xa8775a){_0xa8775a[_0x5b15('0x40')]='';}
+var input = document.getElementById("inMaSV");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("btnDoSV").click();
+}
+});
+function stepGetSinhVien() {
+    var masv = $.trim($("input[name='txtMaSV']").val());
+    if(masv == ''){
+        alert("VUI LÒNG NHẬP MÃ SINH VIÊN");
+        return false;
+    }
+    doLoading()
+    .then(doGetSinhVien)
+    .then(doComplete);
+}
+function doLoading() {
+    return new Promise(function (resolve, reject) {
+        document.querySelector('.js-loading').classList.remove('is-hidden');
+        resolve();
+    });
+}
+function doGetSinhVien() {
+    return new Promise(function (resolve, reject) {
+        sinhVienGet()
+        resolve();
+    });
+}
+
+function doComplete() {
+    return new Promise(function (resolve, reject) {
+        setTimeout(() => {
+            document.querySelector('.js-loading').classList.add('is-hidden');
+        },1000);
+        resolve();
+    });
+}
+
+function openUpdateThongTin() {
+    // body...
+    document.querySelector('.js-showupdate').classList.remove('is-hidden');
+    document.querySelector('.js-showReport').classList.add('is-hidden');
+    document.querySelector('.js-success-message').classList.add('is-hidden');
+}
+
+function openBaoCaoThucTap() {
+    // body...
+    document.querySelector('.js-showReport').classList.remove('is-hidden');
+    document.querySelector('.js-showupdate').classList.add('is-hidden');
+    document.querySelector('.js-success-message').classList.add('is-hidden');
+    
+}
+
+function sinhVienGet() {
+    $("#InfoSV").html('');
+    var masv = $.trim($("input[name='txtMaSV']").val()).replace(/ /g,'');
+    var worksheets = [
+        '',
+        'ouab0ad'];
+
+        worksheets.forEach(function (worksheet) {
+            $.googleSheetToJSON('1nO2nV65Vi3dZWGlaIOXLEc-_JWEZK16XFbjQVH_3Q0U', worksheet)
+            .done(function (rows) {
+                var strText = "<table border=1>";
+                var strText = "<table class='dtable'>";
+                strText += "<tr> <th>SĐT Giảng Viên</th>  <th>Email GV</th>  <th>Tên GV</th>  <th>Tên SV</th>  <th>Lớp</th> <th>Mã SV</th>  <th>Ngành</th>  <th>Ngày sinh</th>  <th>Email SV</th>  <th>Số ĐT </th>  <th>Môn Học</th> ";
+                var count = 0;
+                rows.forEach(function (row) {
+                    var strMaSV = row['masv'];
+                    if (strMaSV == masv) {
+                        count++;
+                        strText += "<tr>";
+                        Object.getOwnPropertyNames(row).forEach(function (name) {
+                            if (name == 'sv-email')
+                                $("input[name=EMAIL]").val(row[name]);
+                            if (name == 'sv-sdt')
+                                $("input[name=DIENTHOAI]").val(row[name]);
+
+                            $("input[name="+name.toUpperCase()+"]").val(row[name]);
+
+                            if (name == 'sotc' || name == 'tt' || name == 'mand' || name == 'mamh' || name == 'nhom' || name ==='congty' || name === 'diachi' || name === 'ngaybatdau' || name === 'dienthoaiquanly' || name ==='chucvu' || name === 'vitricongviec' || name.match(/tuan.*/))
+                                return;                           
+                            var val = [].concat(row[name]).join(' / ');
+                            strText += "<td>" + val + "</td>";
+                        });
+                        strText += "</tr>";
+                    }
+                    return;
+                });
+                if (count == 0)
+                {
+                    $("#InfoSV").html('Không tìm thấy thông tin sinh viên');
+                    document.querySelector('.js-showupdate').classList.add('is-hidden');
+                }
+                else {
+                    $("#InfoSV").html(strText);
+                    $("input[name=MASV]").val(masv);
+                    $("input[name=MASVREPORT]").val(masv);
+                    document.querySelector('.js-showuAction').classList.remove('is-hidden');
+                    getTime();
+                }
+            })
+            .fail(function (err) {
+                //
+            });
+        });
+    }
+
+    //form cap nhat thong tin sinh vien
+    const scriptURLCapNhatThongTin = 'https://script.google.com/macros/s/AKfycby_UEQn0LNrCEMAp1z1EoWGqCvfJvn8i9qVX9s2vsgdlZY_Me4/exec';
+    const formCapNhatThongTin = document.forms['submit-to-google-sheet'];
+    //form cap nhat bao cao thuc tap
+    const scriptURLBaoCao = 'https://script.google.com/macros/s/AKfycbzgL12d13EvS7Hz-zjgu4BSmQ6ALMKJb0dej-uwpqf6EA50GAE/exec';
+    const formBaoCao = document.forms['submit-form-report'];
+    
+    const loading = document.querySelector('.js-loading');
+    const successMessage = document.querySelector('.js-success-message');
+    const errorMessage = document.querySelector('.js-error-message');
+
+    formCapNhatThongTin.addEventListener('submit', e => {
+        e.preventDefault();
+        if ($("input[name=MASV]").val() == '') {
+            alert('BẠN CẦN NHẬP MÃ SV TRA CỨU THÔNG TIN TRƯỚC KHI THỰC HIỆN THAO TÁC NÀY');
+            return false;
+        }
+
+        
+        showLoadingIndicatorFormCapNhatThongTin();
+        fetch(scriptURLCapNhatThongTin, { method: 'POST', body: new FormData(formCapNhatThongTin) })
+        .then(response => showSuccessMessage(response))
+        .catch(error => showErrorMessage(error));
+    })
+
+    formBaoCao.addEventListener('submit', e => {
+        e.preventDefault();
+        if ($("input[name=MASVREPORT]").val() == '') {
+            alert('BẠN CẦN NHẬP MÃ SV TRA CỨU THÔNG TIN TRƯỚC KHI THỰC HIỆN THAO TÁC NÀY');
+            return false;
+        }
+
+        showLoadingIndicatorBaoCao();
+        fetch(scriptURLBaoCao, { method: 'POST', body: new FormData(formBaoCao) })
+        .then(response => showSuccessMessage(response))
+        .catch(error => showErrorMessage(error));
+    })
+
+    function showLoadingIndicatorFormCapNhatThongTin() {
+        formCapNhatThongTin.classList.add('is-hidden');
+        loading.classList.remove('is-hidden');
+    }
+
+    function showLoadingIndicatorBaoCao() {
+        formBaoCao.classList.add('is-hidden');
+        loading.classList.remove('is-hidden');
+    }
+
+    function showSuccessMessage(response) {
+        console.log('Success!', response);
+        setTimeout(() => {
+            successMessage.classList.remove('is-hidden');
+            loading.classList.add('is-hidden');
+        },1000);
+    }
+
+    function showErrorMessage(error) {
+        console.error('Error!', error.message);
+        setTimeout(() => {
+            errorMessage.classList.remove('is-hidden');
+            loading.classList.add('is-hidden');
+        },1000);
+    }
+
+
+    function getTime() {
+        $("#getTime_").html('');
+        var worksheets = [
+        'Sheet3',
+        '3'
+        ];
+
+        worksheets.forEach(function (worksheet) {
+            $.googleSheetToJSON('1nO2nV65Vi3dZWGlaIOXLEc-_JWEZK16XFbjQVH_3Q0U', worksheet)
+            .done(function (rows) {
+                var ngayBatDau, soTuan, um4y, IDTuan;
+                var count = 0;
+                rows.forEach(function (row) {
+                    count++;
+                    Object.getOwnPropertyNames(row).forEach(function (name) {
+                        if(name == 'ngaybatdau')
+                            ngayBatDau = row[name];
+                        else if(name == 'sotuanthuchien')
+                            soTuan = row[name];
+                        else if(name == 'um4y')
+                            um4y = row[name];
+                        else if(name == 'idtuan')
+                            IDTuan = row[name];
+                    });
+                    return;
+                });
+                if (count == 0) {
+                    $("#getTime_").html('Lỗi');
+                } else {
+                    addcontent(ngayBatDau, soTuan, um4y, IDTuan);
+                    addThongbao();
+                }
+            })
+            .fail(function (err) {
+                //
+            });
+        });
+    }
+    function addThongbao(){
+        var content_thongbao = '- <h2>Thông báo ngày 09/05/2019</h2>';
+            content_thongbao += '<p>- Yêu cầu sinh viên báo cáo đủ <strong>8 tuần</strong> trở lên là đạt yêu cầu, riêng sinh viên <strong>VJIT đủ 12 tuần</strong></br>';
+            content_thongbao += '- Sinh viên thực tập <strong>trước ngày 12/05</strong> thì báo cáo <strong>tuần 1 bắt đầu từ ngày 06/05</strong></br>';
+            content_thongbao += '- Sinh viên thực tập <strong>sau ngày 12/05</strong> thì báo cáo <strong>theo thứ tự ngày bên dưới</strong></p>';
+        var add_content_thongbao = document.getElementById('thongbao_sv');
+        add_content_thongbao.innerHTML = content_thongbao;
+
+
+    }
+
+    function addcontent(ngayBatDau, soTuan, um4y, IDTuan){
+        var thoiGianBatDau, thoiGianKetThuc;
+        var thongTinTuan;
+        var danhSachTuan = [];
+        var parts = ngayBatDau.split('/');
+        var ngayBatDau = new Date(parts[2], parts[1] - 1, parts[0]); 
+        ngayBatDau = new Date(ngayBatDau.setDate(ngayBatDau.getDate()  - 7));
+        var isBaoCao = false;
+        for (var i = 0; i < soTuan; i++) {
+            thongTinTuan = [];
+            thongTinTuan.push("Tuần " + (i + 1));
+            thoiGianBatDau = new Date(ngayBatDau.setDate(ngayBatDau.getDate() + 7));
+            thongTinTuan.push("Từ "+thoiGianBatDau.toLocaleDateString('vi-VN'));
+            var temBD = new Date(thoiGianBatDau);
+            thoiGianKetThuc = new Date(thoiGianBatDau.setDate(thoiGianBatDau.getDate() + 6));
+            thongTinTuan.push("Đến "+thoiGianKetThuc.toLocaleDateString('vi-VN'));
+            strButton = "CHƯA TỚI THỜI GIAN BÁO CÁO HOẶC ĐÃ QUÁ HẠN BÁO CÁO";
+            if(!isBaoCao)
+            {
+                var partsTD = um4y.split('/');
+                var today = new Date(partsTD[2], partsTD[1] - 1, partsTD[0]);          
+                var strButton;
+                if(today >= temBD && today <= thoiGianKetThuc)
+                {
+                    strButton = "<button onclick='baocaotuan()' class='report_' >Báo cáo</button>";
+                    $("#form-report").append("<input type='hidden' name='TUANBAOCAO' value="+IDTuan+" >");
+                    $("input[name=MSSVTUAN]").val($("input[name=MASVREPORT]").val()+"-"+IDTuan);
+                    isBaoCao = true;
+                }
+            }
+            thongTinTuan.push(strButton);
+            danhSachTuan.push(thongTinTuan);
+        }
+        table = document.getElementById("time-report-tuan");
+        table.innerHTML = "";
+        for(var i = 0; i < danhSachTuan.length; i++)
+        {
+          var newRow = table.insertRow(table.length);
+          for(var j = 0; j < danhSachTuan[i].length; j++)
+          {
+              var cell = newRow.insertCell(j);
+              cell.innerHTML = danhSachTuan[i][j];
+          }
+      }
+  }
+
+  function baocaotuan(){
+    document.querySelector('.js-showNavReports').classList.remove('is-hidden');
+    document.querySelector('.js-success-message').classList.add('is-hidden');    
+}
+
+function resizeTextarea (id) {
+  var a = document.getElementById(id);
+  a.style.height = '110px';
+  a.style.height = a.scrollHeight+'px';
+}
+
+function init() {
+  var a = document.getElementsByTagName('textarea');
+  for(var i=0,inb=a.length;i<inb;i++) {
+   if(a[i].getAttribute('data-resizable')=='true')
+      resizeTextarea(a[i].id);
+}
+}
+
+addEventListener('DOMContentLoaded', init);
+
+
+// //Clear contents
+// function clearContents(element) {
+//   element.value = '';
+// }
+
+function submition() {
+    var areaText = CKEDITOR.instances['InputTextArea'].getData();
+     $('#saveDaTa').val(areaText);   
+ }
