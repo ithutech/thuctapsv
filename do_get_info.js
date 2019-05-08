@@ -79,7 +79,7 @@ function sinhVienGet() {
 
                             $("input[name="+name.toUpperCase()+"]").val(row[name]);
 
-                            if (name == 'sotc' || name == 'tt' || name == 'mand' || name == 'mamh' || name == 'nhom' || name ==='congty' || name === 'diachi' || name === 'ngaybatdau' || name === 'dienthoaiquanly' || name ==='chucvu' || name === 'vitricongviec' || name.match(/tuan.*/))
+                            if (name == 'sotc' || name == 'tt' || name == 'mand' || name == 'mamh' || name == 'nhom' || name === 'congty' || name === 'website' || name === 'ngaybatdau' || name==='ngaydukienketthuc' || name === 'hotennguoiquanli' || name === 'dienthoaiquanly' || name === 'emailnguoiquanli' || name === 'chucvu' || name === 'vitricongviec' || name.match(/tuan.*/))
                                 return;                           
                             var val = [].concat(row[name]).join(' / ');
                             strText += "<td>" + val + "</td>";
