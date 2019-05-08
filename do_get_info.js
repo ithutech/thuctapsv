@@ -138,7 +138,11 @@ function sinhVienGet() {
             alert('BẠN CẦN NHẬP MÃ SV TRA CỨU THÔNG TIN TRƯỚC KHI THỰC HIỆN THAO TÁC NÀY');
             return false;
         }
-
+        var str = CKEDITOR.instances.InputTextArea.getData();
+        if (str.length < 30 ) {
+            alert('XIN LỖI! BẠN KHÔNG NHẬP NỘI DUNG HOẶC NỘI DUNG ÍT HƠN 20 KÍ TỰ THÌ SAO BÁO CÁO');
+            return false;
+        }
         showLoadingIndicatorBaoCao();
         fetch(scriptURLBaoCao, { method: 'POST', body: new FormData(formBaoCao) })
         .then(response => showSuccessMessage(response))
