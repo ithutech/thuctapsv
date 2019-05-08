@@ -147,6 +147,8 @@
 	<script src="./bootbox.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<script src="./ckeditor/ckeditor.js"></script>
+
 </head>
 <body>
     <div id="container">
@@ -203,16 +205,30 @@
                     <input type="text" name="CONGTY" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Công Ty')" oninput="setCustomValidity('')">
                 </div>
                  <div class="form-wrapper">
-                    <label for="DIACHI">Địa chỉ công ty</label>
-                    <input type="text" name="DIACHI" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Địa chỉ công ty')" oninput="setCustomValidity('')">
+                    <label for="WEBSITE">Website công ty</label>
+                    <input type="text" name="WEBSITE" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Website công ty')" oninput="setCustomValidity('')">
                 </div>
                  <div class="form-wrapper">
                     <label for="NGAYBATDAU">Ngày bắt đầu thực tập tại Công ty</label>
                     <input type="text" name="NGAYBATDAU" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Ngày bắt đầu thực tập tại Công ty')" oninput="setCustomValidity('')">
                 </div>
+                
+                <div class="form-wrapper">
+                    <label for="NGAYDUKIENKETTHUC">Ngày dự kiến kết thúc thực tập tại Công ty</label>
+                    <input type="text" name="NGAYDUKIENKETTHUC" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Ngày dự kiến kết thúc thực tập tại Công ty')" oninput="setCustomValidity('')">
+                </div>
+                <div class="form-wrapper">
+                    <label for="HOTENNGUOIQUANLI">Họ tên người quản lý bạn</label>
+                    <input type="text" name="HOTENNGUOIQUANLI" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Họ tên người quản lý bạn')" oninput="setCustomValidity('')">
+                </div>
+
                  <div class="form-wrapper">
                     <label for="DIENTHOAIQUANLY">Điện thoại người quản lý bạn</label>
                     <input type="text" name="DIENTHOAIQUANLY" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Điện thoại người quản lý bạn')" oninput="setCustomValidity('')">
+                </div>
+                <div class="form-wrapper">
+                    <label for="EMAILNGUOIQUANLI">Email người quản lý bạn</label>
+                    <input type="email" name="EMAILNGUOIQUANLI" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Email người quản lý bạn')" oninput="setCustomValidity('')">
                 </div>
                  <div class="form-wrapper">
                     <label for="CHUCVU">Chức vụ người quản lý bạn</label>
@@ -229,7 +245,7 @@
             <div id="reportSV" class="js-showReport is-hidden">
                 <div id="time-report">
                     <h3 style="color:red; font-weight:bold;">THÔNG TIN THỜI GIAN BÁO CÁO HÀNG TUẦN</h3>
-
+                    <div id="thongbao_sv"></div>
                     <table id="time-report-tuan" class="dtable" >
                         <tr>
                             <th>Tuần báo cáo</th>
@@ -247,11 +263,16 @@
                     <div class="form-wrapper">
                         <h3><label for="">Nội dung công việc</label></h3>
                         <p>Lưu ý: Xong ý 'Chấm' xuống dòng <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ......</p>
-                        <textarea name="NOIDUNGCONGVIEC" class="noidung" id="InputTextArea" placeholder="Nhập nội dung báo cáo của bạn" required="" oninvalid="this.setCustomValidity('Nhập Vị trí công việc thực tập')" oninput="setCustomValidity('')" onkeyup="resizeTextarea('InputTextArea')" onfocus="clearContents(this);" ></textarea>
+                        <textarea class="noidung" class="noidung" id="InputTextArea" placeholder="Nhập nội dung báo cáo của bạn" required=""  onkeyup="resizeTextarea('InputTextArea')"></textarea>
+                        <script>
+                            CKEDITOR.replace('InputTextArea');
+                        </script>
                     </div>
+
+                    <input type="text" hidden name="NOIDUNGCONGVIEC" id="saveDaTa">
                     <input type="text" hidden name="MASVREPORT">
                     <input type="text" hidden name="MSSVTUAN">
-                    <button class="report_" type="submit">GỬI BÁO CÁO</button>
+                    <button class="report_" type="submit" onclick="submition()">GỬI BÁO CÁO</button>
                 </form>
             </div>
             <p class="js-success-message is-hidden" style="color:red">CẬP NHẬT THÀNH CÔNG</p>
