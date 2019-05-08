@@ -247,7 +247,7 @@
                     <div class="form-wrapper">
                         <h3><label for="">Nội dung công việc</label></h3>
                         <p>Lưu ý: Xong ý 'Chấm' xuống dòng <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ......</p>
-                        <textarea name="NOIDUNGCONGVIEC" class="noidung" id="InputTextArea" placeholder="Nhập nội dung báo cáo của bạn" onkeyup="resizeTextarea('InputTextArea')" onfocus="clearContents(this);" required></textarea>
+                        <textarea name="NOIDUNGCONGVIEC" class="noidung" id="InputTextArea" placeholder="Nhập nội dung báo cáo của bạn" required="" oninvalid="this.setCustomValidity('Nhập Vị trí công việc thực tập')" oninput="setCustomValidity('')" onkeyup="resizeTextarea('InputTextArea')" onfocus="clearContents(this);" ></textarea>
                     </div>
                     <input type="text" hidden name="MASVREPORT">
                     <input type="text" hidden name="MSSVTUAN">
