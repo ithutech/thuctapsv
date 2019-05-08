@@ -250,3 +250,23 @@ button {
     padding-left: 15px; } }
 
 /*# sourceMappingURL=style.css.map */
+
+div#thongbao_sv {
+  border: 1px dotted grey;
+  padding: 25px;
+  color: red;
+  margin-bottom: 20px;
+}
+
+div#thongbao_sv p {
+  font-size: 16px;
+}
+
+
+/* Style editor */
+span#cke_1_top,span#cke_1_bottom {
+  background: white;
+}
+button.report_:before {
+  background-color: lightseagreen;
+}
