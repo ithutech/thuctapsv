@@ -215,7 +215,7 @@ function sinhVienGet() {
         });
     }
     function addThongbao(){
-        var content_thongbao = '- <h2>Thông báo ngày 09/05/2019</h2>';
+        var content_thongbao = '<h2>Thông báo ngày 09/05/2019</h2>';
             content_thongbao += '<p>- Yêu cầu sinh viên báo cáo đủ <strong>8 tuần</strong> trở lên là đạt yêu cầu, riêng sinh viên <strong>VJIT đủ 12 tuần</strong></br>';
             content_thongbao += '- Sinh viên thực tập <strong>trước ngày 12/05</strong> thì báo cáo <strong>tuần 1 bắt đầu từ ngày 06/05</strong></br>';
             content_thongbao += '- Sinh viên thực tập <strong>sau ngày 12/05</strong> thì báo cáo <strong>theo thứ tự ngày bên dưới</strong></p>';
