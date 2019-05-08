@@ -1,19 +1,22 @@
 ﻿<!doctype html>
 <html>
+
 <head>
     <title>Cổng Quản Lý Thực Tập Tốt Nghiệp - Học Kỳ Doanh Nghiệp</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-	       <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
- <link rel="stylesheet" type="text/css" href="./css/style.css">
-	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <meta charset="utf-8">
     <style>
         :root {
             --accent: #F18260;
             --purple: #252431;
         }
+
         .form-container {
             position: relative;
             background: #fff;
@@ -30,6 +33,7 @@
             box-shadow: 0 10px 50px 0 #ccc;
             margin-bottom: 2rem;
         }
+
         .is-hidden {
             display: none !important;
         }
@@ -51,17 +55,17 @@
 
         @keyframes dash {
             0% {
-                stroke-dasharray: 1,200;
+                stroke-dasharray: 1, 200;
                 stroke-dashoffset: 0;
             }
 
             50% {
-                stroke-dasharray: 89,200;
+                stroke-dasharray: 89, 200;
                 stroke-dashoffset: -35;
             }
 
             100% {
-                stroke-dasharray: 89,200;
+                stroke-dasharray: 89, 200;
                 stroke-dashoffset: -124;
             }
         }
@@ -85,28 +89,31 @@
             position: fixed;
         }
 
-            .loading-spinner svg {
-                position: relative;
-                animation: rotate 2s linear infinite;
-                height: 50px;
-                width: 50px;
-            }
+        .loading-spinner svg {
+            position: relative;
+            animation: rotate 2s linear infinite;
+            height: 50px;
+            width: 50px;
+        }
 
-            .loading-spinner circle {
-                stroke: var(--accent);
-                stroke-dasharray: 1,200;
-                stroke-dashoffset: 0;
-                stroke-linecap: round;
-                animation: dash 1.5s ease-in-out infinite;
-            }
+        .loading-spinner circle {
+            stroke: var(--accent);
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+            stroke-linecap: round;
+            animation: dash 1.5s ease-in-out infinite;
+        }
 
         p.js-success-message {
             text-align: center;
             font-size: 20px;
-            padding:10px 0px;
+            padding: 10px 0px;
         }
 
-        table.dtable th, table.dtable td, table.ntable th, table.ntable td {
+        table.dtable th,
+        table.dtable td,
+        table.ntable th,
+        table.ntable td {
             border: 1px #ccc solid;
             border-collapse: collapse;
             padding: 5px;
@@ -117,7 +124,8 @@
             margin-bottom: 5px;
         }
 
-        table.dtable, table.ntable {
+        table.dtable,
+        table.ntable {
             border: 1px #ccc solid;
             border-collapse: collapse;
             padding: 5px;
@@ -133,23 +141,26 @@
             padding-right: 5px;
             padding-left: 5px;
         }
-		.btn-tuyendung{
-			float:right;
-			border:2px solid #ae3c33;
-			border-radius: 10px;
-			padding: 10px;
-			color:red;
-		}
 
+        .btn-tuyendung {
+            float: right;
+            border: 2px solid #ae3c33;
+            border-radius: 10px;
+            padding: 10px;
+            color: red;
+        }
     </style>
     <script src="./jquery-3.3.1.min.js"></script>
     <script src="./jquery-google-sheet-to-json.min.js"></script>
-	<script src="./bootbox.min.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-<script src="./ckeditor/ckeditor.js"></script>
+    <script src="./bootbox.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+    </script>
+    <script src="./ckeditor/ckeditor.js"></script>
 
 </head>
+
 <body>
     <div id="container">
         <div id="header">
@@ -160,21 +171,24 @@
                 <h2 style="color: blue; font-weight: bold;">KHOA CÔNG NGHỆ THÔNG TIN</h2>
             </div>
         </div>
-        <div id="main-content">          
+        <div id="main-content">
             <h1 style="text-align:center; color: red">CỔNG QUẢN LÝ THỰC TẬP TỐT NGHIỆP </h1>
             <h1 style="text-align: center; color: red">HỌC KỲ DOANH NGHIỆP</h1>
 
             <div class="submit-SV">
-                  <h3 style="display:inline">DÀNH CHO SINH VIÊN</h3>
-				
-					<a class="btn-tuyendung" href="https://www.hutech.edu.vn/khoacntt/doanh-nghiep/tuyen-dung" target="_blank" >TÌM CTY THỰC TẬP</a>
+                <h3 style="display:inline">DÀNH CHO SINH VIÊN</h3>
+
+                <a class="btn-tuyendung" href="https://www.hutech.edu.vn/khoacntt/doanh-nghiep/tuyen-dung"
+                    target="_blank">TÌM CTY THỰC TẬP</a>
                 <div class="form-wrapper">
                     <label for="txtMaSV">MASV</label>
-                    <input id="inMaSV" type="text" name="txtMaSV" placeholder="Mã số sinh viên" class="form-control" required="">
+                    <input id="inMaSV" type="text" name="txtMaSV" placeholder="Mã số sinh viên" class="form-control"
+                        required="">
                 </div>
-                <button id="btnDoSV" type="button" onclick="stepGetSinhVien(); return false;">TRA CỨU THÔNG TIN HƯỚNG DẪN</button>
+                <button id="btnDoSV" type="button" onclick="stepGetSinhVien(); return false;">TRA CỨU THÔNG TIN HƯỚNG
+                    DẪN</button>
             </div>
-             <div class="loading js-loading is-hidden" style="z-index: 100;">
+            <div class="loading js-loading is-hidden" style="z-index: 100;">
                 <div class="loading-spinner" style="z-index: 100;">
                     <img src="./images/loading.svg">
                 </div>
@@ -186,57 +200,77 @@
             </div>
 
             <div id="BaoCao" style="text-align: center;" class="js-showuAction is-hidden">
-                <button style="display: inline;" id="btnCapNhat" type="button" onclick="openUpdateThongTin(); return false;">CẬP NHẬT THÔNG TIN THỰC TẬP</button>
-                <button style="display: inline;"  id="btnBaoCao" type="button" onclick="openBaoCaoThucTap(); return false;">BÁO CÁO THỰC TẬP</button>
+                <button style="display: inline;" id="btnCapNhat" type="button"
+                    onclick="openUpdateThongTin(); return false;">CẬP NHẬT THÔNG TIN THỰC TẬP</button>
+                <button style="display: inline;" id="btnBaoCao" type="button"
+                    onclick="openBaoCaoThucTap(); return false;">BÁO CÁO THỰC TẬP</button>
             </div>
 
             <form name="submit-to-google-sheet" class="js-showupdate is-hidden">
                 <h3 style="color:red; font-weight:bold;">SINH VIÊN CẬP NHẬT THÔNG TIN</h3>
                 <div class="form-wrapper">
                     <label for="">Email</label>
-                    <input type="email" name="EMAIL" placeholder="Địa chỉ thư điện tử?" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Email')" oninput="setCustomValidity('')">
+                    <input type="email" name="EMAIL" placeholder="Địa chỉ thư điện tử?" class="form-control" required=""
+                        oninvalid="this.setCustomValidity('Nhập Email')" oninput="setCustomValidity('')">
                 </div>
                 <div class="form-wrapper">
                     <label for="">Điện Thoại</label>
-                    <input type="text" name="DIENTHOAI" placeholder="Hãy giữ liên lạc?" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập số điện thoại')" oninput="setCustomValidity('')">
+                    <input type="text" name="DIENTHOAI" placeholder="Hãy giữ liên lạc?" class="form-control" required=""
+                        oninvalid="this.setCustomValidity('Nhập số điện thoại')" oninput="setCustomValidity('')">
                 </div>
                 <div class="form-wrapper">
                     <label for="CONGTY">Công ty thực tập</label>
-                    <input type="text" name="CONGTY" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Công Ty')" oninput="setCustomValidity('')">
+                    <input type="text" name="CONGTY" class="form-control" required=""
+                        oninvalid="this.setCustomValidity('Nhập Công Ty')" oninput="setCustomValidity('')">
                 </div>
-                 <div class="form-wrapper">
+                <div class="form-wrapper">
                     <label for="WEBSITE">Website công ty</label>
-                    <input type="text" name="WEBSITE" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Website công ty')" oninput="setCustomValidity('')">
+                    <input type="text" name="WEBSITE" class="form-control" required=""
+                        oninvalid="this.setCustomValidity('Nhập Website công ty')" oninput="setCustomValidity('')">
                 </div>
-                 <div class="form-wrapper">
+                <div class="form-wrapper">
                     <label for="NGAYBATDAU">Ngày bắt đầu thực tập tại Công ty</label>
-                    <input type="text" name="NGAYBATDAU" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Ngày bắt đầu thực tập tại Công ty')" oninput="setCustomValidity('')">
+                    <input type="text" name="NGAYBATDAU" class="form-control" required=""
+                        oninvalid="this.setCustomValidity('Nhập Ngày bắt đầu thực tập tại Công ty')"
+                        oninput="setCustomValidity('')">
                 </div>
-                
+
                 <div class="form-wrapper">
                     <label for="NGAYDUKIENKETTHUC">Ngày dự kiến kết thúc thực tập tại Công ty</label>
-                    <input type="text" name="NGAYDUKIENKETTHUC" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Ngày dự kiến kết thúc thực tập tại Công ty')" oninput="setCustomValidity('')">
+                    <input type="text" name="NGAYDUKIENKETTHUC" class="form-control" required=""
+                        oninvalid="this.setCustomValidity('Nhập Ngày dự kiến kết thúc thực tập tại Công ty')"
+                        oninput="setCustomValidity('')">
                 </div>
                 <div class="form-wrapper">
                     <label for="HOTENNGUOIQUANLI">Họ tên người quản lý bạn</label>
-                    <input type="text" name="HOTENNGUOIQUANLI" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Họ tên người quản lý bạn')" oninput="setCustomValidity('')">
+                    <input type="text" name="HOTENNGUOIQUANLI" class="form-control" required=""
+                        oninvalid="this.setCustomValidity('Nhập Họ tên người quản lý bạn')"
+                        oninput="setCustomValidity('')">
                 </div>
 
-                 <div class="form-wrapper">
+                <div class="form-wrapper">
                     <label for="DIENTHOAIQUANLY">Điện thoại người quản lý bạn</label>
-                    <input type="text" name="DIENTHOAIQUANLY" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Điện thoại người quản lý bạn')" oninput="setCustomValidity('')">
+                    <input type="text" name="DIENTHOAIQUANLY" class="form-control" required=""
+                        oninvalid="this.setCustomValidity('Nhập Điện thoại người quản lý bạn')"
+                        oninput="setCustomValidity('')">
                 </div>
                 <div class="form-wrapper">
                     <label for="EMAILNGUOIQUANLI">Email người quản lý bạn</label>
-                    <input type="email" name="EMAILNGUOIQUANLI" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Email người quản lý bạn')" oninput="setCustomValidity('')">
+                    <input type="email" name="EMAILNGUOIQUANLI" class="form-control" required=""
+                        oninvalid="this.setCustomValidity('Nhập Email người quản lý bạn')"
+                        oninput="setCustomValidity('')">
                 </div>
-                 <div class="form-wrapper">
+                <div class="form-wrapper">
                     <label for="CHUCVU">Chức vụ người quản lý bạn</label>
-                    <input type="text" name="CHUCVU" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Chức vụ người quản lý bạn')" oninput="setCustomValidity('')">
+                    <input type="text" name="CHUCVU" class="form-control" required=""
+                        oninvalid="this.setCustomValidity('Nhập Chức vụ người quản lý bạn')"
+                        oninput="setCustomValidity('')">
                 </div>
-                 <div class="form-wrapper">
+                <div class="form-wrapper">
                     <label for="VITRICONGVIEC">Vị trí công việc thực tập</label>
-                    <input type="text" name="VITRICONGVIEC" class="form-control" required="" oninvalid="this.setCustomValidity('Nhập Vị trí công việc thực tập')" oninput="setCustomValidity('')">
+                    <input type="text" name="VITRICONGVIEC" class="form-control" required=""
+                        oninvalid="this.setCustomValidity('Nhập Vị trí công việc thực tập')"
+                        oninput="setCustomValidity('')">
                 </div>
                 <input type="text" hidden name="MASV">
                 <button class="report_" type="submit">CẬP NHẬT THÔNG TIN</button>
@@ -246,7 +280,7 @@
                 <div id="time-report">
                     <h3 style="color:red; font-weight:bold;">THÔNG TIN THỜI GIAN BÁO CÁO HÀNG TUẦN</h3>
                     <div id="thongbao_sv"></div>
-                    <table id="time-report-tuan" class="dtable" >
+                    <table id="time-report-tuan" class="dtable">
                         <tr>
                             <th>Tuần báo cáo</th>
                             <th>Thời gian bắt đầu</th>
@@ -256,16 +290,20 @@
                     </table>
                 </div>
                 <div id="getTime_">
-                    
+
                 </div>
                 <form id="form-report" name="submit-form-report" class="js-showNavReports is-hidden" novalidate>
-                    <h3 style="color:red; font-weight:bold;">SINH VIÊN BÁO CÁO THỰC TẬP CÔNG TY</h3>                   
+                    <h3 style="color:red; font-weight:bold;">SINH VIÊN BÁO CÁO THỰC TẬP CÔNG TY</h3>
                     <div class="form-wrapper">
                         <h3><label for="">Nội dung công việc</label></h3>
-                        <p>Lưu ý: Xong ý 'Chấm' xuống dòng <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ...... <br> - Thực hiện công việc ......</p>
-                        <textarea class="noidung" class="noidung" id="InputTextArea" placeholder="Nhập nội dung báo cáo của bạn" required=""  onkeyup="resizeTextarea('InputTextArea')"></textarea>
+                        <p>Lưu ý: Xong ý 'Chấm' xuống dòng <br> - Thực hiện công việc ...... <br> - Thực hiện công việc
+                            ...... <br> - Thực hiện công việc ......</p>
+                        <textarea class="noidung" class="noidung" id="InputTextArea"
+                            placeholder="Nhập nội dung báo cáo của bạn" required=""
+                            onkeyup="resizeTextarea('InputTextArea')"></textarea>
                         <script>
                             CKEDITOR.replace('InputTextArea');
+                           
                         </script>
                     </div>
 
@@ -284,7 +322,9 @@
         <script src="./formdata-poly.js"></script>
         <script src="./promise-polyfill.js"></script>
         <script src="./whatwg-fetch.js"></script>
-        <p style="text-align:center">&copy; 2019 Nguyễn Đình Ánh - Lương Công Hiếu (SV Hutech) - Database: Google Sheet, Host: Github<p>
+        <p style="text-align:center">&copy; 2019 Nguyễn Đình Ánh - Lương Công Hiếu (SV Hutech) - Database: Google Sheet,
+            Host: Github<p>
     </div>
 </body>
+
 </html>
