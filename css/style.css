@@ -1,3 +1,4 @@
+@import url("./css/style.scss");
 @font-face {
   font-family: "Muli-Regular";
   src: url("../fonts/muli/Muli-Regular.ttf"); }
@@ -252,10 +253,10 @@ button {
 /*# sourceMappingURL=style.css.map */
 
 div#thongbao_sv {
-  border: 1px dotted grey;
-  padding: 25px;
-  color: red;
-  margin-bottom: 20px;
+  height: 227px;
+  position: relative;
+  /* border: 1px dotted grey; */
+
 }
 
 div#thongbao_sv p {
@@ -269,4 +270,22 @@ span#cke_1_top,span#cke_1_bottom {
 }
 button.report_:before {
   background-color: lightseagreen;
+}
+
+
+/* Style border news */
+
+
+.animation-box {
+  width: 100%;
+  height: 220px;
+  padding: 25px;
+  color: red;
+  margin-bottom: 20px;
+}
+
+/* CKEDITOR DIABLE UPLOADING IMAGE */
+a#cke_28{
+  pointer-events: none;
+  opacity: 0.5;
 }
