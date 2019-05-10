@@ -252,16 +252,7 @@ button {
 
 /*# sourceMappingURL=style.css.map */
 
-div#thongbao_sv {
-  height: 227px;
-  position: relative;
-  /* border: 1px dotted grey; */
 
-}
-
-div#thongbao_sv p {
-  font-size: 16px;
-}
 
 
 /* Style editor */
@@ -276,12 +267,13 @@ button.report_:before {
 /* Style border news */
 
 div#thongbao_sv {
-  height: 227px;
-  /* position: relative; */
   border: 1px dotted grey;
   margin-bottom: 20px;
   padding: 25px;
   color: red;
+}
+div#thongbao_sv p {
+  font-size: 16px;
 }
 
 /* CKEDITOR DIABLE UPLOADING IMAGE */
