@@ -281,3 +281,15 @@ a#cke_28{
   pointer-events: none;
   opacity: 0.5;
 }
+
+.notes >h3, p {
+  /* margin: 0; */
+  padding-left: 20p;
+  padding: 5px 0;
+}
+
+.notes {
+  padding-left: 20px;
+  margin: 27px 0;
+  border-left: 4px solid lightblue;
+}
