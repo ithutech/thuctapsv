@@ -39,9 +39,8 @@
         }
 
         a {
-            display: block;
             width: max-content;
-            margin: 0 auto;
+            margin: 0;
             color: var(--accent);
             text-decoration: none;
             margin-bottom: 0.5rem;
@@ -294,16 +293,37 @@
                 </div>
                 <form id="form-report" name="submit-form-report" class="js-showNavReports is-hidden" novalidate>
                     <h3 style="color:red; font-weight:bold;">SINH VIÊN BÁO CÁO THỰC TẬP CÔNG TY</h3>
+
+
+
+
+
                     <div class="form-wrapper">
-                        <h3><label for="">Nội dung công việc</label></h3>
-                        <p>Lưu ý: Xong ý 'Chấm' xuống dòng <br> - Thực hiện công việc ...... <br> - Thực hiện công việc
-                            ...... <br> - Thực hiện công việc ......</p>
+                        <div class="box-notes">
+                            <div class="notes">
+                            <h3>Nội dung công việc thực tập tại công ty</h3>
+                            <p><strong style="color:red">Lưu ý: Đọc thêm: Update soon... </strong><br> Mọi sinh viên báo cáo bình thường trong tuần này</p>
+                            </div>
+                        </div>
+
                         <textarea class="noidung" class="noidung" id="InputTextArea"
                             placeholder="Nhập nội dung báo cáo của bạn" required=""
                             onkeyup="resizeTextarea('InputTextArea')"></textarea>
                         <script>
-                            CKEDITOR.replace('InputTextArea');
-                           
+                            CKEDITOR.replace('InputTextArea', {
+                                enterMode: CKEDITOR.ENTER_BR,
+                                shiftEnterMode: CKEDITOR.ENTER_P
+                            });
+
+                            CKEDITOR.on('instanceReady', function (ev) {
+                                ev.editor.dataProcessor.writer.setRules('br', {
+                                    indent: false,
+                                    breakBeforeOpen: false,
+                                    breakAfterOpen: false,
+                                    breakBeforeClose: false,
+                                    breakAfterClose: false
+                                });
+                            });
                         </script>
                     </div>
 
