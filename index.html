@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
         integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <meta charset="utf-8">
     <style>
@@ -291,48 +292,75 @@
                 <div id="getTime_">
 
                 </div>
-                <form id="form-report" name="submit-form-report" class="js-showNavReports is-hidden" novalidate>
-                    <h3 style="color:red; font-weight:bold;">SINH VIÊN BÁO CÁO THỰC TẬP CÔNG TY</h3>
+                <div id="popup-wrap-box">
+                    <div class="popup-wrap">
+                        <div class="popup-box">
+                            <div class="popup-content">
+                                <h2>Hướng dẫn b&aacute;o c&aacute;o thực tập</h2>
+                                <hr />
+                                <ol>
+                                    <li>&nbsp;Sinh vi&ecirc;n b&aacute;o c&aacute;o <strong>kết th&uacute;c m&ocirc;n
+                                            học</strong> bằng <strong>file b&aacute;o c&aacute;o</strong> tổng hợp bằng
+                                        c&aacute;ch <strong><a
+                                                href="https://drive.google.com/drive/u/0/folders/1qCQ6t3DINU1b1T-ZqOICptb4SuooZA0H">upload
+                                                file Google Drive</a></strong> v&agrave; chia sẽ link<br />&nbsp;<a
+                                            href="https://ibb.co/1s4y4Rx"><img alt="editor1"
+                                                src="https://i.ibb.co/hXTQT2v/editor1.png" width="70%" /></a></li>
+                                    <li>Sinh vi&ecirc;n b&aacute;o c&aacute;o theo tr&igrave;nh soạn thảo hoặc
+                                        <strong>chỉnh sữa theo m&atilde; HTML</strong>&nbsp;(Gợi &yacute;: tr&igrave;nh
+                                        b&agrave;y c&agrave;ng rỏ r&agrave;ng, bố cụ ti&ecirc;u đề chặt chẽ c&agrave;ng
+                                        g&acirc;y thi&ecirc;n cảm cho gi&aacute;o vi&ecirc;n)</li>
+                                    <li>Trong qu&aacute; tr&igrave;nh sử dụng - Lỗi c&oacute; thể sinh ra (Nếu
+                                        c&oacute;: SV b&aacute;o cho ch&uacute;ng t&ocirc;i biết để&nbsp;khắc phục
+                                        v&agrave; ph&aacute;t triển hệ thống</li>
+                                </ol>
 
-
-
-
-
-                    <div class="form-wrapper">
-                        <div class="box-notes">
-                            <div class="notes">
-                            <h3>Nội dung công việc thực tập tại công ty</h3>
-                            <p><strong style="color:red">Lưu ý: Đọc thêm: Update soon... </strong><br> Mọi sinh viên báo cáo bình thường trong tuần này</p>
                             </div>
+                            <a class="close-btn popup-close" href="#">x</a>
+
+                        </div>
+                    </div>
+                    <form id="form-report" name="submit-form-report" class="js-showNavReports is-hidden" novalidate>
+                        <h3 style="color:red; font-weight:bold;">SINH VIÊN BÁO CÁO THỰC TẬP CÔNG TY</h3>
+                        <div class="form-wrapper">
+                            <div class="box-notes">
+                                <div class="notes">
+                                    <h3>Nội dung công việc thực tập tại công ty</h3>
+                                    <p><strong style="color:red"><a class="btn popup-btn" href="#"><i class="fa fa-hand-o-right arrow" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;LƯU Ý: TRƯỚC KHI BÁO CÁO</a> 
+
+                                        </strong></p>
+                                </div>
+                            </div>
+
+                            <textarea class="noidung" class="noidung" id="InputTextArea"
+                                placeholder="Nhập nội dung báo cáo của bạn" required=""
+                                onkeyup="resizeTextarea('InputTextArea')"></textarea>
+                            <script>
+                                CKEDITOR.replace('InputTextArea', {
+                                    enterMode: CKEDITOR.ENTER_BR,
+                                    shiftEnterMode: CKEDITOR.ENTER_P
+                                });
+
+                                CKEDITOR.on('instanceReady', function (ev) {
+                                    ev.editor.dataProcessor.writer.setRules('br', {
+                                        indent: false,
+                                        breakBeforeOpen: false,
+                                        breakAfterOpen: false,
+                                        breakBeforeClose: false,
+                                        breakAfterClose: false
+                                    });
+                                });
+                            </script>
                         </div>
 
-                        <textarea class="noidung" class="noidung" id="InputTextArea"
-                            placeholder="Nhập nội dung báo cáo của bạn" required=""
-                            onkeyup="resizeTextarea('InputTextArea')"></textarea>
-                        <script>
-                            CKEDITOR.replace('InputTextArea', {
-                                enterMode: CKEDITOR.ENTER_BR,
-                                shiftEnterMode: CKEDITOR.ENTER_P
-                            });
-
-                            CKEDITOR.on('instanceReady', function (ev) {
-                                ev.editor.dataProcessor.writer.setRules('br', {
-                                    indent: false,
-                                    breakBeforeOpen: false,
-                                    breakAfterOpen: false,
-                                    breakBeforeClose: false,
-                                    breakAfterClose: false
-                                });
-                            });
-                        </script>
-                    </div>
-
-                    <input type="text" hidden name="NOIDUNGCONGVIEC" id="saveDaTa">
-                    <input type="text" hidden name="MASVREPORT">
-                    <input type="text" hidden name="MSSVTUAN">
-                    <button class="report_" type="submit" onclick="submition()">GỬI BÁO CÁO</button>
-                </form>
+                        <input type="text" hidden name="NOIDUNGCONGVIEC" id="saveDaTa">
+                        <input type="text" hidden name="MASVREPORT">
+                        <input type="text" hidden name="MSSVTUAN">
+                        <button class="report_" type="submit" onclick="submition()">GỬI BÁO CÁO</button>
+                    </form>
+                </div>
             </div>
+
             <p class="js-success-message is-hidden" style="color:red">CẬP NHẬT THÀNH CÔNG</p>
             <p class="js-error-message is-hidden">AHAHA - LỖI RỒI</p>
         </div>
