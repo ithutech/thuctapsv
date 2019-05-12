@@ -419,7 +419,8 @@ p {
 
 .popup-box {
   z-index: 100;
-  width: 775px;
+  height: 90%;
+  width: 90%;
   padding: 30px;
   transform: translate(-50%, -50%) scale(0.5);
   position: absolute;
