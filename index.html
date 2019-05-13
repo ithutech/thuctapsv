@@ -315,6 +315,7 @@
                                         kh&aacute;c&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img alt="233"
                                             src="https://i.ibb.co/qx0hFnQ/233.png" />
                                         <p><img alt="3232" src="https://i.ibb.co/QYYkwb7/3232.png" /></p>
+                                        <p><h4 style="color: red">=> Hoặc click vào nội dung sẽ tự động xóa</h4></p>
                                     </li>
                                     <li><strong>Tiếp tục phần b&aacute;o c&aacute;o của bạn: Tương tự cho c&aacute;c
                                             tuần tới</strong></li>
@@ -379,7 +380,15 @@
                                         breakAfterClose: false
                                     });
                                 });
-                            </script>
+                                var isFirst = 1;
+                                CKEDITOR.instances['InputTextArea'].on('focus', function( evt ) {
+                                if(isFirst)
+                                {
+                                    isFirst = 0;
+                                    CKEDITOR.instances['InputTextArea'].setData('');
+                                }
+                                });
+                                </script>
                         </div>
 
                         <input type="text" hidden name="NOIDUNGCONGVIEC" id="saveDaTa">
